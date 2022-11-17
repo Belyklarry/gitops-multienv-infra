@@ -7,5 +7,5 @@ variable "project_env" {
 }
 
 variable "region" {
-  default = "us-east-1"
+  default = "af-south-1"
 }
