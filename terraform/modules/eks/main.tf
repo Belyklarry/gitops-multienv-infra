@@ -14,7 +14,7 @@ module "eks" {
 
   eks_managed_node_group_defaults = {
     disk_size      = 8
-    instance_types = ["t2.medium"]
+    instance_types = ["t3.medium"]
   }
 
   # Add IAM user ARNs to aws-auth configmap to be able to manage EKS from the console
@@ -42,7 +42,7 @@ module "eks" {
       max_size     = 2
       desired_size = 1
 
-      instance_types                = ["t2.medium"]
+      instance_types                = ["t3.medium"]
       capacity_type                 = "ON_DEMAND" # SPOT
       # additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
     }
@@ -52,7 +52,7 @@ module "eks" {
     #   max_size     = 2
     #   desired_size = 1
 
-    #   instance_types                = ["t2.medium"]
+    #   instance_types                = ["t3.medium"]
     #   capacity_type                 = "ON_DEMAND" # SPOT
     #   additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
     # }
